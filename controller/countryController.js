@@ -3,6 +3,7 @@ const Country = require('../models/Country');
 const getAllCountries = async (req, res) => {
     try {
         const countries = await Country.find({});
+        res.header('Access-Control-Allow-Origin','*');
         res.json(countries);
     } catch (error) {
         console.error(error);
@@ -13,6 +14,7 @@ const getAllCountries = async (req, res) => {
 const getCountryById = async (req, res) => {
     try {
         const country = await Country.findById(req.params.id);
+        res.header('Access-Control-Allow-Origin','*');
         res.json(country)
     } catch (error) {
         console.error(error);

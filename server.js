@@ -9,6 +9,7 @@ const app = express();
 app.use(express.json());
 
 app.get("/", (req, res) => {
+    res.header('Access-Control-Allow-Origin','*');
     res.json({ message: "API running..." });
 });
 
